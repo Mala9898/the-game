@@ -1,11 +1,38 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib import auth
+from django.conf import settings
 
 from . import forms, models
 
 def index(request):
-    return render(request, 'home.html', {'user': request.user})
+    if not request.user.is_authenticated:
+        return render(request, 'home.html')
+
+    level = request.user.level
+    if level >= len(settings.LEVEL_SOLUTIONS):
+        return render(request, 'congrats.html')
+
+    wrong_solution = False
+    if request.method == 'POST':
+        form = forms.ResponseForm(request.POST)
+        if form.is_valid():
+            solution = form.cleaned_data['solution']
+            if solution == settings.LEVEL_SOLUTIONS[level]:
+                request.user.level += 1
+                request.user.save()
+                return HttpResponseRedirect("/")
+            else:
+                wrong_solution = True
+    else:
+        form = forms.ResponseForm()
+
+    return render(request, 'level.html', {
+        'form': form,
+        'level': level,
+        'template': 'levels/{}.html'.format(level),
+        'wrong_solution': wrong_solution
+    })
 
 def login(request):
     # if this is a POST request we need to process the form data

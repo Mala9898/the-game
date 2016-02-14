@@ -32,6 +32,7 @@ class User(AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    level = models.IntegerField(default=1, null=False, blank=False)
 
     objects = UserManager()
 
