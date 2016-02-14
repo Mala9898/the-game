@@ -2,11 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.conf import settings
+from django.utils import timezone
 
 from . import forms, models
 
 def index(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_authenticated():
         return render(request, 'home.html')
 
     level = request.user.level
@@ -15,17 +16,18 @@ def index(request):
 
     wrong_solution = False
     if request.method == 'POST':
-        form = forms.ResponseForm(request.POST)
+        form = forms.SolutionForm(request.POST)
         if form.is_valid():
             solution = form.cleaned_data['solution']
             if solution == settings.LEVEL_SOLUTIONS[level]:
                 request.user.level += 1
+                request.user.level_date = timezone.now()
                 request.user.save()
                 return HttpResponseRedirect("/")
             else:
                 wrong_solution = True
     else:
-        form = forms.ResponseForm()
+        form = forms.SolutionForm()
 
     return render(request, 'level.html', {
         'form': form,
@@ -33,6 +35,11 @@ def index(request):
         'template': 'levels/{}.html'.format(level),
         'wrong_solution': wrong_solution
     })
+
+def ranking(request):
+    users = models.User.objects.filter(level__gt=0).order_by('-level', 'level_date')
+    return render(request, 'ranking.html', {'users': users})
+
 
 def login(request):
     # if this is a POST request we need to process the form data

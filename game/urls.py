@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^login/$', views.login),
     url(r'^logout/$', views.logout),
     url(r'^register/$', views.register),
+    url(r'^ranking/$', views.ranking),
     url(r'^admin/', admin.site.urls),
 ]
