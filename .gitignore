@@ -1,3 +1,4 @@
 .sass-cache
 *.sqlite3
 *.pyc
+*.css
