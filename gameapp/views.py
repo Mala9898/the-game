@@ -22,7 +22,7 @@ def login(request):
             else:
                 bad_login = True
     else:
-        form = forms.LoginForm()
+        form = forms.LoginForm().as_p()
 
     return render(request, 'login.html', {'form': form, 'bad_login': bad_login})
 
@@ -43,7 +43,7 @@ def register(request):
                 auth.login(request, user)
                 return HttpResponseRedirect("/")
     else:
-        form = forms.LoginForm()
+        form = forms.LoginForm().as_p()
 
     return render(request, 'register.html', {'form': form, 'bad_username': bad_username})
 
