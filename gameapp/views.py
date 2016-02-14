@@ -30,7 +30,7 @@ def index(request):
         form = forms.SolutionForm()
 
     return render(request, 'level.html', {
-        'form': form,
+        'form': form.as_p(),
         'level': level,
         'template': 'levels/{}.html'.format(level),
         'wrong_solution': wrong_solution
@@ -56,9 +56,9 @@ def login(request):
             else:
                 bad_login = True
     else:
-        form = forms.LoginForm().as_p()
+        form = forms.LoginForm()
 
-    return render(request, 'login.html', {'form': form, 'bad_login': bad_login})
+    return render(request, 'login.html', {'form': form.as_p(), 'bad_login': bad_login})
 
 def register(request):
     # if this is a POST request we need to process the form data
@@ -77,9 +77,9 @@ def register(request):
                 auth.login(request, user)
                 return HttpResponseRedirect("/")
     else:
-        form = forms.LoginForm().as_p()
+        form = forms.LoginForm()
 
-    return render(request, 'register.html', {'form': form, 'bad_username': bad_username})
+    return render(request, 'register.html', {'form': form.as_p(), 'bad_username': bad_username})
 
 def logout(request):
     if request.method == 'POST':
