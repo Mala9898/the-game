@@ -34,6 +34,7 @@ img.game-logo {
     @include center-block();
     width: 30%;
     margin-top: 10vh;
+    margin-bottom: 2vh;
 }
 
 .game-description p {
@@ -75,22 +76,23 @@ img.game-logo {
 body.hacker {
     background: black;
     color: $hlight;
-    input {
-        &[type="text"] {
-            text-indent: 6px;
-        }
-        font-family: 'Helvetica', 'Arial', sans-serif;
-        background-color: $hdark;
+}
+
+input {
+    &[type="text"] {
+        text-indent: 6px;
+    }
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: $hdark;
+    border-color: $hlight;
+    &:active {
         border-color: $hlight;
-        &:active {
-            border-color: $hlight;
-        }
     }
 }
 
 h1 {
     color: $hlight;
-    margin-top: 10vh;
+    margin-top: 5vh;
     font-size: 3.5em;
     margin-bottom: 5vh;
 }
@@ -98,6 +100,24 @@ h1 {
 @media(max-width: 600px) {
     .head-logo img {
         width: 85%;
+    }
+}
+
+.top-forms {
+    form {
+        display: inline-block;
+    }
+    margin-bottom: 2vh;
+}
+
+.ranking-link {
+    @include center-block();
+    text-align: center;
+    margin-top: 5vh;
+    a {
+        color: $hlight;
+        text-decoration: none;
+        font-size: 1.4em;
     }
 }
 
