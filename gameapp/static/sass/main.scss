@@ -17,6 +17,12 @@ $blink: #75ACDB;
 $bgray: #666;
 $bwhite: #FFF;
 
+label {
+    position: relative;
+    top: 10px;
+    margin-right: 10px;
+}
+
 .head-logo img {
     @include center-block();
     width: 55%;
