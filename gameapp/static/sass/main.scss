@@ -1,0 +1,245 @@
+@import "bootstrap";
+
+@font-face {
+    font-family: minecraftia;
+    src: url(/static/fonts/minecraftia.ttf);
+}
+
+* {
+    font-family: minecraftia;
+}
+
+$blight: #2A31EE;
+$bdark: #0F29CF;
+$hlight: #00EA01;
+$hdark: #023F04;
+$blink: #75ACDB;
+$bgray: #666;
+$bwhite: #FFF;
+
+.head-logo img {
+    @include center-block();
+    width: 55%;
+    margin-top: 20vh;
+}
+
+img.game-logo {
+    @include center-block();
+    width: 30%;
+    margin-top: 10vh;
+}
+
+.game-description p {
+    @include center-block();
+    span {
+        color: $hlight;
+    }
+    font-size: 1.3em;
+    line-height: 1.9em;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.game-statement {
+    @include center-block();
+    span {
+        color: $hlight;
+    }
+    font-size: 1.3em;
+    line-height: 1.9em;
+    text-align: left;
+    margin-top: 5vh;
+    border: 5px dashed $hdark;
+    p {
+        margin: 0;
+    }
+    padding: 20px;
+}
+
+.game-answer {
+    font-size: 1.2em;
+    h1 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        margin-top: 50px;
+    }
+}
+
+body.hacker {
+    background: black;
+    color: $hlight;
+    h1 {
+        color: $hlight;
+    }
+    input {
+        &[type="text"] {
+            text-indent: 6px;
+        }
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        background-color: $hdark;
+        border-color: $hlight;
+        &:active {
+            border-color: $hlight;
+        }
+    }
+}
+
+.top-buttons, .bottom-buttons {
+    >div {
+        text-align: center;
+    }
+    .button-container {
+        display: inline-block;
+        a {
+            &:first-child {
+                margin-right: 15px;
+            }
+            &:hover {
+                background-color: #9D9FF9;
+                border-bottom-width: 6px;
+                position: relative;
+                top: 4px;
+            }
+            display: inline-block;
+            text-decoration: none;
+            background-color: $blight;
+            color: $bwhite;
+            width: 160px;
+            padding: 15px 0px 10px;
+            font-weight: 500;
+            font-size: 1.4em;
+            border: none;
+            border-bottom: 10px solid $bdark;
+        }
+    }
+}
+
+.top-buttons .button-container {
+    margin-top: 8vh;
+}
+
+.top-description p, .bottom-description p, .coming-soon p {
+    @include center-block();
+    color: $blight;
+    font-size: 1.3em;
+    line-height: 1.9em;
+    text-align: center;
+}
+
+.top-description p {
+    margin-top: 10vh;
+}
+
+.coming-soon p {
+    color: $bgray;
+    font-size: 2.2em;
+}
+
+h1 {
+    color: $blight;
+    margin-top: 10vh;
+    font-size: 3.5em;
+    margin-bottom: 5vh;
+}
+
+.faq-questions {
+    &:not(:first-of-type) {
+        margin-top: 10vh;
+    }
+    .title {
+        font-size: 1.6em;
+        color: $blight;
+        margin-bottom: 30px;
+    }
+    .answer {
+        font-size: 1.15em;
+        line-height: 2em;
+        color: $bgray;
+    }
+    .question {
+        margin-bottom: 5vh;
+    }
+    a {
+        color: $blink;
+        text-decoration: none;
+    }
+}
+
+.sponsor-images {
+    text-align: center;
+    img {
+        &.mr {
+            margin-right: 20px;
+        }
+        &.ml {
+            margin-left: 20px;
+        }
+        &.tera {
+            width: 60%
+        }
+        &.giga {
+            width: 38%
+        }
+        &.mega {
+            width: 25%;
+        }
+        &.mili {
+            width: 20%;
+        }
+    }
+    .separator {
+        height: 5vh;
+    }
+}
+
+@media(max-width: 600px) {
+    .head-logo img {
+        width: 85%;
+    }
+    .button-container a {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0!important;
+    }
+}
+
+.partners {
+    text-align: center;
+    .partner {
+        width: 12%;
+        margin: 0px 20px;
+    }
+    margin-bottom: 10vh;
+}
+
+#promo-video {
+    max-width: 700px;
+    width: 100%;
+    height: 400px;
+}
+
+.bottom-buttons {
+    margin-top: 3vh;
+}
+
+.bottom-description {
+    margin-top: 7vh;
+}
+
+.bottom-links {
+    @include center-block();
+    text-align: center;
+    margin-top: 25vh;
+    &.hacker {
+        margin-top: 5vh;
+    }
+    padding-bottom: 10vh;
+    a {
+        &.hacker {
+            color: $hlight;
+        }
+        color: $blight;
+        text-decoration: none;
+        padding: 0.4em;
+    }
+}
