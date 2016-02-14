@@ -15,10 +15,12 @@
         {% if user.is_authenticated %}
         Hello, {{user}}!
 
-        <form action="/logout/" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Logout" />
-        </form>
+	<div class="top-forms">
+            <form action="/logout/" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Logout" />
+            </form>
+        </div>
         {% else %}
         Hello, Anon!
 	<div class="top-forms">
