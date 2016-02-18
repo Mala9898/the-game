@@ -121,6 +121,7 @@ LEVEL_SOLUTIONS = [
     '286-168',
     '2601850323',
     '33254528318498418',
+    '133713371337133742',
     'catalan',
     'uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuurlrrrrlrlrrrrlrllrrlllrllrlrlrlllllllrlrlrlrlrl',
     'noneedtobeupset',
