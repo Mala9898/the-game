@@ -112,8 +112,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LEVEL_SOLUTIONS = [
-    'torri',
-    'topkek',
-    'fuckyou',
-    'blabla'
+    'thegame',
+    '1337p455w0rd',
+    'superpassword',
+    'knuthmorrispratt',
+    'kolmogorov',
+    '286-168',
+    '2601850323',
+    '33254528318498418',
+    'catalan',
+    'uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuurlrrrrlrlrrrrlrllrrlllrllrlrlrlllllllrlrlrlrlrl',
+    'noneedtobeupset',
 ]
