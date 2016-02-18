@@ -115,6 +115,7 @@ LEVEL_SOLUTIONS = [
     'thegame',
     '1337p455w0rd',
     'superpassword',
+    '133333337',
     'knuthmorrispratt',
     'kolmogorov',
     '286-168',
