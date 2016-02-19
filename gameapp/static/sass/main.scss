@@ -24,6 +24,12 @@ ul {
     margin-top: 20px;
 }
 
+pre {
+    background-color: $hdark;
+    color: $hlight;
+    border-color: $hlight;
+}
+
 label {
     position: relative;
     top: 10px;
