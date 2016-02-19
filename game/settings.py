@@ -116,6 +116,7 @@ LEVEL_SOLUTIONS = [
     '1337p455w0rd',
     'superpassword',
     '133333337',
+    'aaronswartz',
     'knuthmorrispratt',
     'kolmogorov',
     '286-168',
