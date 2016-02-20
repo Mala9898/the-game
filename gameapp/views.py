@@ -19,7 +19,7 @@ def index(request):
         form = forms.SolutionForm(request.POST)
         if form.is_valid():
             solution = form.cleaned_data['solution']
-            if solution == settings.LEVEL_SOLUTIONS[level]:
+            if solution in settings.LEVEL_SOLUTIONS[level]:
                 request.user.level += 1
                 request.user.level_date = timezone.now()
                 request.user.save()
