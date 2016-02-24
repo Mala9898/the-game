@@ -11,7 +11,7 @@
         {% for u in users %}
             <tr {% if u.username == user.username %}class="me"{% endif %}>
                 <td>{{u.username}}</td>
-                <td>{{u.level}}</td>
+                <td>{{u.level}}{% if u.level >= levellength %} - Finished {% endif %}</td>
             </tr>
         {% endfor %}
     </table>

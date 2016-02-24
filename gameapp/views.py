@@ -38,7 +38,7 @@ def index(request):
 
 def ranking(request):
     users = models.User.objects.filter(level__gt=0).order_by('-level', 'level_date')
-    return render(request, 'ranking.html', {'users': users})
+    return render(request, 'ranking.html', {'users': users, 'levellength': len(settings.LEVEL_SOLUTIONS)})
 
 
 def login(request):
