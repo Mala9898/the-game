@@ -126,6 +126,6 @@ LEVEL_SOLUTIONS = [
     ['thecakeisalie'],
     ['133713371337133742'],
     ['catalan'],
-    ['uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuurlrrrrlrlrrrrlrllrrlllrllrlrlrlllllllrlrlrlrlrl'],
+    ['uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuurllrlrrrrllrlrlrlllrrlrrlrrrlrrllrrlrlrlrlrlrlrrll'],
     ['noneedtobeupset'],
 ]
